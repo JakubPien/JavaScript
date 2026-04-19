@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Fotografia</title>
-    <link rel="stylesheet" href="styl.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -29,7 +29,7 @@
         <h3>Zamówienie</h3>
             <label>
                 Wybierz obraz:
-                <input type="file" id="plik" accept="image/png, image/jpeg" />
+                <input type="file" id="plik" accept="image/jpeg" />
                 <br>
             Liczba Kopii:
                 <input type="number" id="ilosc"> <br>
@@ -40,11 +40,11 @@
     </section>
 
     <nav id="bn">
-        <ol>
+        <ul>
             <li><a href="regulamin.html">Regulamin</a></li>
             <li><a href="uslugi.html">Uslugi</a></li>
             <li><a href="https://pixabay.com ">Zdjęcia</a></li>
-        </ol>
+        </ul>
     </nav>
 
     <section id="secR">
@@ -68,10 +68,8 @@
                     cena = ilosc * 2;
                 }
 
-                prawaSekcja.innerHTML = "<h3>Koszyk</h3>";
-
                 const img = document.createElement('img');
-                img.src = file.name;
+                img.src = URL.createObjectURL(file);
                 img.alt = 'zamowienie';
 
                 const pKopie = document.createElement('p');
@@ -89,7 +87,7 @@
 </nav>
 
 <footer>
-    <p>Autor strony: Jakub Piniężny 3p</p>
+    <p>Autor strony: <em>Jakub Piniężny 3p</em></p>
 </footer>
 
 

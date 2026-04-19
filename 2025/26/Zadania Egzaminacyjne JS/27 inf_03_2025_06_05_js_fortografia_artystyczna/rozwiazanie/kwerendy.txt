@@ -6,3 +6,4 @@ WHERE nr_klienta = 3;
 kw3:
 SELECT COUNT(liczba_odbitek) FROM zamowienia WHERE rodzaj = "Błyszczący";
 kw4:
+CREATE USER 'Anna'@'localhost' IDENTIFIED BY '@NNa';
