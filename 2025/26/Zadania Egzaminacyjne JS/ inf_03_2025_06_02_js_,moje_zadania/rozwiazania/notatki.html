@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Planer zadań</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+<nav id="bb">
+    <img src="obraz.jpg" alt="notatki">
+</nav>
+
+<header>
+    <h2>Moje zadania</h2>
+</header>
+
+<nav id="bn">
+    <input type="text" id="poleTekstowe" placeholder="Dodaj zadanie...">
+    <button id="btn1">Dodaj</button>
+</nav>
+
+<nav id="bg">
+    <ul id="lista">
+        <li>Wyprowadzić psa  <button onclick="oznaczWykonane(this)">Wykonane</button></li>
+        <li>Gimnastyka  <button onclick="oznaczWykonane(this)">Wykonane</button></li>
+        <li>Zakupy  <button onclick="oznaczWykonane(this)">Wykonane</button></li>
+        <li>Spacer z kumplem  <button onclick="oznaczWykonane(this)">Wykonane</button></li>
+        <li>Odrabianie lekcji z młodszą siostrą  <button onclick="oznaczWykonane(this)">Wykonane</button></li>
+        <li>Projekt na geografię  <button onclick="oznaczWykonane(this)">Wykonane</button></li>
+    </ul>
+</nav>
+
+<script>
+    function oznaczWykonane(element) {
+        element.parentElement.style.textDecoration = "line-through";
+        element.disabled = true;
+    }
+
+    let btn = document.getElementById("btn1");
+
+    btn.onclick = function dodajElement() {
+        const tresc = document.getElementById('poleTekstowe').value;
+        if (tresc === "") return;
+
+        const li = document.createElement('li');
+        li.textContent = tresc + " ";
+
+        const btnWykonane = document.createElement('button');
+        btnWykonane.textContent = 'Wykonane';
+
+        btnWykonane.className = 'przycisk-wykonane';
+
+        btnWykonane.onclick = function() {
+            li.style.textDecoration = 'line-through';
+            btnWykonane.disabled = true;
+        };
+
+        li.appendChild(btnWykonane);
+        document.getElementById('lista').appendChild(li);
+
+        document.getElementById('poleTekstowe').value = '';
+    }
+
+</script>
+
+<footer>
+    <h3>Notatki: Jakub Pieniężny 3p</h3>
+</footer>
+
+</body>
+</html>
