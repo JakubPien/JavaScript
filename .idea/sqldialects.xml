@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/2025/26/Zadania Egzaminacyjne JS/ inf_03_2025_01_06_js_pozycyjne_systemy/plik14/szachy.sql" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/2025/26/Zadania Egzaminacyjne JS/ inf_03_2025_06_02_js_,moje_zadania/rozwiazania/baza.sql" dialect="GenericSQL" />
   </component>
 </project>

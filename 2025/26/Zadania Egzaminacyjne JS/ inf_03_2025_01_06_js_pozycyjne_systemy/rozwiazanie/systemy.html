@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Systemy liczbowe</title>
+  <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+<header>
+  <img src="cyfry.gif" alt="Cyfry szesnastkowe">
+  <h1>Pozycyjne systemy liczbowe</h1>
+</header>
+
+<nav id="b1">
+  <table>
+    <tr>
+      <th>HEX</th>
+      <th>BIN</th>
+      <th>DEC</th>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>1010</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td>1011</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>1100</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>D</td>
+      <td>1101</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>E</td>
+      <td>1110</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>1111</td>
+      <td>15</td>
+    </tr>
+  </table>
+</nav>
+
+<nav id="b2">
+  <input type="number" id="number" placeholder="Wpiszliczbę dziesiętną">
+  <button>Przelicz na binarny</button>
+  <p id="p1">Brak obliczeń</p>
+
+  <script>
+    let input = document.getElementById("number");
+    let btn = document.querySelector("button");
+
+    btn.addEventListener("click", function () {
+      let number = parseInt(input.value);
+
+      if (isNaN(number)) {
+        document.getElementById("p1").innerHTML = "Podaj poprawną liczbę";
+        return;
+      }
+
+      let bin = number.toString(2);
+
+      bin = bin.split('').reverse().join('')
+              .match(/.{1,4}/g)
+              .join(' ')
+              .split('').reverse().join('');
+
+      let wynik = bin + "<sub>(2)</sub>";
+      document.getElementById("p1").innerHTML = wynik;
+    });
+  </script>
+
+</nav>
+<nav id="b3">
+  <h2>Słowniczek</h2>
+  <dl>
+    <dt>Binarny</dt>
+    <dd>pozycyjny system liczbowy, w którym podstawą jest liczba 2, a do zapisu liczb potrzebne są tylko dwie cyfry: 0 i 1. </dd>
+    <dt>Decymalny</dt>
+    <dd>pozycyjny system liczbowy, w którym podstawą jest liczba 10; do zapisu liczb stosuje się 10 cyfr: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.</dd>
+    <dt><a href="https://szesnastkowy_system_liczbowy.pl">Heksadecymalny</a></dt>
+    <dd>pozycyjny system liczbowy, w którym podstawą jest liczba 16. Do zapisu liczb w tym systemie potrzebne jest szesnaście znaków.  </dd>
+  </dl>
+</nav>
+
+<footer>
+  <p>Stronę opracował: Jakub Pieniężny 3p </p>
+</footer>
+
+</body>
+</html>
