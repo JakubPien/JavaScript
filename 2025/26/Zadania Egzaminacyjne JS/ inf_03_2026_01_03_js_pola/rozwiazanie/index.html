@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pola figur</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+<header>
+    <h2>Pola figur płaskich</h2>
+</header>
+
+<nav id="bg">
+    <nav id="bn">
+        <h3>MENU</h3>
+        <ul>
+            <li>
+                <a href="index.html">Prostokąt i trójkąt</a>
+            </li>
+            <li>
+                <a href="kolo.html">Okrąg i koło</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section>
+        <img id="duzyObraz" src="1d.bmp" alt="Figura">
+
+        <br>
+
+        <img src="1m.bmp" alt="Wybierz trójkąt"
+             class="figura"
+             onclick="zmienObraz('1d.bmp')">
+
+        <img src="2m.bmp" alt="Wybierz prostokąt"
+             class="figura"
+             onclick="zmienObraz('2d.bmp')">
+
+        <script>
+            function zmienObraz(nowyObraz) {
+                document.getElementById("duzyObraz").src = nowyObraz;
+            }
+
+            function oblicz() {
+                let bok1 = Number(document.getElementById("bok1").value);
+                let bok2 = Number(document.getElementById("bok2").value);
+
+                let pole = bok1 * bok2;
+
+                document.getElementById("wynik").innerHTML =
+                    "Pole wynosi: " + pole;
+            }
+        </script>
+    </section>
+    
+    <nav id="bb">
+        <h3>Pole prostokąta / pole trójkąta</h3>
+
+        <label for="bok1">Bok prostokąta / podstawa trójkąta:</label>
+        <input type="number" id="bok1">
+
+        <br><br>
+
+        <label for="bok2">Drugi bok prostokąta / wysokość trójkąta:</label>
+        <input type="number" id="bok2">
+
+        <br><br>
+
+        <button onclick="oblicz()">Oblicz</button>
+
+        <p id="wynik"></p>
+
+        <script>
+            function zmienObraz(nowyObraz) {
+                document.getElementById("duzyObraz").src = nowyObraz;
+            }
+
+            function oblicz() {
+
+                let bok1 = Number(document.getElementById("bok1").value);
+                let bok2 = Number(document.getElementById("bok2").value);
+
+                let obraz = document.getElementById("duzyObraz").src;
+
+                let wynik;
+
+                if (obraz.includes("2d.bmp")) {
+                    wynik = bok1 * bok2;
+                    document.getElementById("wynik").innerHTML =
+                        "Pole prostokąta wynosi: " + wynik;
+                }
+
+                else {
+                    wynik = (bok1 * bok2) / 2;
+                    document.getElementById("wynik").innerHTML =
+                        "Pole trójkąta wynosi: " + wynik;
+                }
+            }
+        </script>
+    </nav>
+</nav>
+
+<footer>
+    <p>Autor: Jakub Pieniężny 3p</p>
+</footer>
+
+</body>
+</html>
